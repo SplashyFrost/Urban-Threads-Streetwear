@@ -1,5 +1,7 @@
 # Urban Threads — Demo Streetwear Store
 
+Live Preview: https://splashyfrost.github.io/Urban-Threads-Streetwear/
+
 A lightweight static demo storefront showcasing a modern monochrome UI with subtle glass effects, a small product catalog, and simple client-side interactivity (loading spinner, mobile nav, demo forms).
 
 This repository is a front-end demo only — there is no backend/auth implemented. It's ideal as a visual prototype, design reference, or starter template for a small static merchandise site.
