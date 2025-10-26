@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login / Sign Up — Urban Threads</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="spinner-overlay" class="spinner-overlay" aria-hidden="true">
+    <div class="spinner" role="status" aria-live="polite"><span class="sr-only">Loading…</span></div>
+  </div>
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Urban Threads</a></div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="hamburger"></span></button>
+    <div class="nav_links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login">Login / Sign Up</a>
+    </div>
+  </nav>
+
+  <main class="container" style="padding:3rem 1rem; max-width:520px;">
+    <h1>Login / Sign Up</h1>
+    <p class="lead">Demo only — this page is a static landing. No authentication backend is connected. The form below is for layout/testing purposes only.</p>
+    <form class="auth-form" data-demo-spinner data-demo-message="Demo sign-in (no backend)" style="max-width:520px;">
+      <label class="form-field">Email<br><input type="email" name="email" required></label>
+      <label class="form-field">Password<br><input type="password" name="password" required></label>
+      <p><button class="cta" type="submit">Sign in</button> <a class="cta ghost" href="#">Create account</a></p>
+    </form>
+    <p style="margin-top:0.8rem; color:var(--muted-2); font-size:0.95rem">Tip: This is a static demo. To integrate real auth, wire this form to your auth provider or backend endpoint.</p>
+  </main>
+  <script src="main.js" defer></script>
+</body>
+</html>

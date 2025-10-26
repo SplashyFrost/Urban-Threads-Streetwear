@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#121212"/>
+  <rect x="70" y="60" width="460" height="280" rx="12" fill="#1e1e1e" stroke="#ffffff22"/>
+  <text x="300" y="210" fill="#9b9b9b" font-family="sans-serif" font-size="20" text-anchor="middle">Runner Jacket — Charcoal</text>
+</svg>
