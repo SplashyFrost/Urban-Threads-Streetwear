@@ -126,8 +126,8 @@ main, nav, header, footer, .container{ position: relative; z-index: 1 }
   font-size: 0.98rem;
   transition: color 180ms ease, background 180ms ease, transform 140ms ease;
 }
-.nav_links a:hover,
-.nav_links a:focus{
+.nav_links a:not(.login):hover,
+.nav_links a:not(.login):focus{
   color: var(--ui-contrast);
   background: var(--glass);
   transform: translateY(-1px);
@@ -142,7 +142,7 @@ main, nav, header, footer, .container{ position: relative; z-index: 1 }
   border-radius:2px;
   transition: width 220ms ease;
 }
-.nav_links a:hover::after{ width: 100% }
+.nav_links a:not(.login):hover::after{ width: 100% }
 
 .login {
   display: inline-flex;
@@ -304,6 +304,7 @@ a:focus, .login:focus{ outline: 3px solid rgba(255,255,255,0.08); outline-offset
   margin-top: 1rem;
 }
 .product-card {
+  display: block; /* anchor as block so whole card is clickable */
   background: var(--glass-gradient-2);
   padding: 1.5rem;
   border-radius: 16px;
@@ -313,6 +314,8 @@ a:focus, .login:focus{ outline: 3px solid rgba(255,255,255,0.08); outline-offset
   backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
+  text-decoration: none; /* remove underline */
+  color: inherit; /* keep text color */
 }
 
 .product-card::before {
@@ -335,13 +338,15 @@ a:focus, .login:focus{ outline: 3px solid rgba(255,255,255,0.08); outline-offset
   border-radius: 12px;
   transition: transform 280ms ease;
   box-shadow: 0 8px 24px -6px var(--shadow);
+  aspect-ratio: 4 / 3; /* keep consistent image proportions */
+  object-fit: cover;
+  max-height: 260px;
 }
 
-.product-card h3 { 
-  margin: 1.2rem 0 0.4rem 0;
-  font-size: 1.1rem;
-  color: var(--ui-contrast);
-  transition: transform 180ms ease;
+.product-card:focus{
+  outline: 3px solid rgba(255,255,255,0.08);
+  outline-offset: 4px;
+  border-radius: 16px;
 }
 
 .product-card .price { 
@@ -379,6 +384,19 @@ a:focus, .login:focus{ outline: 3px solid rgba(255,255,255,0.08); outline-offset
 
 @media (max-width:820px){
   .product-detail .product-detail-inner{ grid-template-columns: 1fr; }
+}
+
+/* tighter spacing for small screens */
+@media (max-width:480px){
+  .products-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .product-card{
+    padding: 1rem;
+  }
+  .product-card img{ max-height: 180px }
+  .product-card h3{ font-size: 1rem }
 }
 
 /* featured section heading */
@@ -540,3 +558,4 @@ body.loaded .spinner-overlay{ opacity:0; visibility:hidden }
   .hero{ padding: 3.25rem 1rem }
   .hero .lead{ font-size: 0.97rem }
 }
+
